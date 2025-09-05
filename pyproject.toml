@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "meme-generator"
-version = "0.1.2"
+version = "0.1.14"
 description = "Python package for making fun pictures"
-authors = ["ClarityJS <3369906077@qq.com>", "meetwq <meetwq@gmail.com>"]
+authors = ["02 <hentai02y@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/ClarityJS/meme-generator"
-repository = "https://github.com/ClarityJS/meme-generator"
+homepage = "https://github.com/Memes02/meme-generator"
+repository = "https://github.com/Memes02/meme-generator"
 exclude = [
     "meme_generator/memes/*.{jpg,png,gif}"
 ]

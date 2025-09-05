@@ -21,8 +21,8 @@ from pil_utils import BuildImage, Text2Image
 from pil_utils.typing import ColorType
 from typing_extensions import ParamSpec
 
-from .config import meme_config
-from .exception import MemeFeedback
+from meme_generator.config import meme_config
+from meme_generator.exception import MemeFeedback
 
 if TYPE_CHECKING:
     from .meme import Meme
@@ -35,7 +35,7 @@ R = TypeVar("R")
 
 
 def reduce_frames(img: BuildImage, frame_step: int = 2) -> BuildImage:
-  
+
   """
   对 GIF 动图进行抽帧处理，减少帧数以降低体积。
   - 如果是静态图/动图 < 指定帧数，直接返回原图
@@ -56,7 +56,6 @@ def reduce_frames(img: BuildImage, frame_step: int = 2) -> BuildImage:
         if i % frame_step == 0
       ]
       duration = pil_img.info.get("duration", 100)
-      print(f"[DEBUG] {n_frames} => {len(frames)} 帧, 抽帧完成")
       return BuildImage.open(save_gif(frames, duration * frame_step / 1000))
     return img
 
