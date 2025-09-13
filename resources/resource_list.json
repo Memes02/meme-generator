@@ -4136,6 +4136,70 @@
     "hash": "55a292d06283415b37c2bed99092b4d7"
   },
   {
+    "path": "doro_knight/images/1.png",
+    "hash": "ce152f6efdd2458262f48ce54202adfb"
+  },
+  {
+    "path": "doro_knight/images/10.png",
+    "hash": "7b819ac5928e15bd561f075f4ca3b7a0"
+  },
+  {
+    "path": "doro_knight/images/11.png",
+    "hash": "53eda636c644ad50163c6d6594932767"
+  },
+  {
+    "path": "doro_knight/images/12.png",
+    "hash": "2349de13ca73c87673ebc6024a7e15bc"
+  },
+  {
+    "path": "doro_knight/images/13.png",
+    "hash": "b042db309cb7a11ef756e02284ffeb2b"
+  },
+  {
+    "path": "doro_knight/images/14.png",
+    "hash": "4eb06a4bfebc7519664ef0ccab7e43fe"
+  },
+  {
+    "path": "doro_knight/images/15.png",
+    "hash": "ea0d65fb5764020e059112e1d09c727e"
+  },
+  {
+    "path": "doro_knight/images/16.png",
+    "hash": "b69cd456704f44262fcce7a8c324efc2"
+  },
+  {
+    "path": "doro_knight/images/2.png",
+    "hash": "c83587b80bf223b5d46008961081c050"
+  },
+  {
+    "path": "doro_knight/images/3.png",
+    "hash": "43fb4b4ab34a6ee273d3e01b35224d1e"
+  },
+  {
+    "path": "doro_knight/images/4.png",
+    "hash": "19d31d2e5bb75418815c549cedeed229"
+  },
+  {
+    "path": "doro_knight/images/5.png",
+    "hash": "50516a1158b4c106dc14880aea1ef7b0"
+  },
+  {
+    "path": "doro_knight/images/6.png",
+    "hash": "d0277cb1a7dfd1ef3d6f7abc08765c5d"
+  },
+  {
+    "path": "doro_knight/images/7.png",
+    "hash": "1e82dd3db62c8f6e533692ce16f39f76"
+  },
+  {
+    "path": "doro_knight/images/8.png",
+    "hash": "b588f9a3de2633a5c3bc34473b4abcf6"
+  },
+  {
+    "path": "doro_knight/images/9.png",
+    "hash": "17504c9e4de4395a3f255f18fadeb50e"
+  },
+  {
     "path": "doro_lick/images/1.png",
     "hash": "aae424cda2b1da91e8312110d6ba52bf"
   },
@@ -4410,6 +4474,10 @@
   {
     "path": "doro_orange/images/0.png",
     "hash": "f86343b02d8a2e1ae1e43bce855c3e35"
+  },
+  {
+    "path": "doro_surrounding_photos/images/0.png",
+    "hash": "02446216ab0561599d8d55770e69f516"
   },
   {
     "path": "doro_thumbs_up/images/0.jpg",
@@ -10232,6 +10300,10 @@
     "hash": "5fabe8c0915b8ffeff8aecb6e9b72330"
   },
   {
+    "path": "mihoyo_columbina_jade_feet/images/0.png",
+    "hash": "904bdd13042425133ede91ba5c131de0"
+  },
+  {
     "path": "mihoyo_duantou/images/1.png",
     "hash": "739230587b56265e8000155c3892c75e"
   },
@@ -11134,6 +11206,10 @@
   {
     "path": "mihoyo_shikanoin_heizou_frame/images/0.png",
     "hash": "3c0a3af30f2f0ff9061f373c391b07b5"
+  },
+  {
+    "path": "mihoyo_sigewinne_fingered/images/0.png",
+    "hash": "4eab53f66ab3b5917b94d398ad7c0e49"
   },
   {
     "path": "mihoyo_tartaglia_frame/images/0.png",
