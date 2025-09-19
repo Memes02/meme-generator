@@ -56,8 +56,9 @@ def reduce_frames(img: BuildImage, frame_step: int = 2) -> BuildImage:
         if i % frame_step == 0
       ]
       duration = pil_img.info.get("duration", 100)
+      print(f"[DEBUG] {n_frames} => {len(frames)} 帧, 抽帧完成")
       return BuildImage.open(save_gif(frames, duration * frame_step / 1000))
-    return img
+  return img
 
 def run_sync(call: Callable[P, R]) -> Callable[P, Coroutine[None, None, R]]:
     """一个用于包装 sync function 为 async function 的装饰器
