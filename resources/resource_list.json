@@ -6476,6 +6476,10 @@
     "hash": "aa3dde683bea08ee6fe5fee1d34ae8b1"
   },
   {
+    "path": "github/images/0.png",
+    "hash": "ff35449f5b09a9930ba9b4d3ba6e3b33"
+  },
+  {
     "path": "gong_xi_fa_cai/images/0.png",
     "hash": "967d045cfdb5baa76578263eb00e699e"
   },
@@ -7214,6 +7218,10 @@
   {
     "path": "interview/images/microphone.png",
     "hash": "34775a82e4b8b7df44d2cf37a6e16ea5"
+  },
+  {
+    "path": "izumi_sagiri_painting/images/0.png",
+    "hash": "af413f1a956a1124fd70e837dcc45018"
   },
   {
     "path": "jd_delivery_person/images/0.png",
@@ -8952,6 +8960,86 @@
     "hash": "7c750334b66d562aa2e1a08260673aaf"
   },
   {
+    "path": "kurogames_jinhsi_sit/images/1.png",
+    "hash": "7e098ac34146ed9b80743d57ad9e6f41"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/10.png",
+    "hash": "826c3a22c403a33d0720195b5de2460d"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/11.png",
+    "hash": "826c3a22c403a33d0720195b5de2460d"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/12.png",
+    "hash": "4bfa88b57c1447069be08054a89a815c"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/13.png",
+    "hash": "32af3e6cee3ffe994a715f472dbf12b2"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/14.png",
+    "hash": "4bfa88b57c1447069be08054a89a815c"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/15.png",
+    "hash": "826c3a22c403a33d0720195b5de2460d"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/16.png",
+    "hash": "826c3a22c403a33d0720195b5de2460d"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/17.png",
+    "hash": "4bfa88b57c1447069be08054a89a815c"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/18.png",
+    "hash": "582eaec98ea5674f6cda218e21ed2bbf"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/19.png",
+    "hash": "4bfa88b57c1447069be08054a89a815c"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/2.png",
+    "hash": "66e1c99c07dac0b5f403714d7cf553f1"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/20.png",
+    "hash": "826c3a22c403a33d0720195b5de2460d"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/3.png",
+    "hash": "32af3e6cee3ffe994a715f472dbf12b2"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/4.png",
+    "hash": "4bfa88b57c1447069be08054a89a815c"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/5.png",
+    "hash": "826c3a22c403a33d0720195b5de2460d"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/6.png",
+    "hash": "826c3a22c403a33d0720195b5de2460d"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/7.png",
+    "hash": "4bfa88b57c1447069be08054a89a815c"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/8.png",
+    "hash": "c918895402ff76a502cb34e97f76c917"
+  },
+  {
+    "path": "kurogames_jinhsi_sit/images/9.png",
+    "hash": "4bfa88b57c1447069be08054a89a815c"
+  },
+  {
     "path": "kurogames_jinhsi_steamed_buns/images/1.png",
     "hash": "0e080f6c88b572232fc1c2fc415f98d0"
   },
@@ -9108,6 +9196,14 @@
     "hash": "03bdfd7f977a2988a628ee3e946eae74"
   },
   {
+    "path": "kurogames_phrolova_eat/images/1.png",
+    "hash": "3977b6ed73bef80348e72844885ae12b"
+  },
+  {
+    "path": "kurogames_phrolova_eat/images/2.png",
+    "hash": "0f24ef66629fb19784913e2812fd4b7d"
+  },
+  {
     "path": "kurogames_phrolova_holdsign/images/0.jpg",
     "hash": "c37000b55af8b7fed1e12038efcd08f0"
   },
@@ -9146,6 +9242,54 @@
   {
     "path": "kurogames_rover_holdsign/images/0.png",
     "hash": "4611a15bc04b8de91fd6a07ffd0c2b48"
+  },
+  {
+    "path": "kurogames_rover_lick/images/1.png",
+    "hash": "b4b085249952ca583a36e8587c1c297e"
+  },
+  {
+    "path": "kurogames_rover_lick/images/10.png",
+    "hash": "c914c93e35c2a5cecfee77b0116a4142"
+  },
+  {
+    "path": "kurogames_rover_lick/images/11.png",
+    "hash": "38c981edce2a49d51514897748f878a8"
+  },
+  {
+    "path": "kurogames_rover_lick/images/12.png",
+    "hash": "a72208dda3e22757ff24b5804d6c4c8b"
+  },
+  {
+    "path": "kurogames_rover_lick/images/2.png",
+    "hash": "c914c93e35c2a5cecfee77b0116a4142"
+  },
+  {
+    "path": "kurogames_rover_lick/images/3.png",
+    "hash": "38c981edce2a49d51514897748f878a8"
+  },
+  {
+    "path": "kurogames_rover_lick/images/4.png",
+    "hash": "a72208dda3e22757ff24b5804d6c4c8b"
+  },
+  {
+    "path": "kurogames_rover_lick/images/5.png",
+    "hash": "d1bed26642083c7644e2b61b8809c80e"
+  },
+  {
+    "path": "kurogames_rover_lick/images/6.png",
+    "hash": "c914c93e35c2a5cecfee77b0116a4142"
+  },
+  {
+    "path": "kurogames_rover_lick/images/7.png",
+    "hash": "38c981edce2a49d51514897748f878a8"
+  },
+  {
+    "path": "kurogames_rover_lick/images/8.png",
+    "hash": "a72208dda3e22757ff24b5804d6c4c8b"
+  },
+  {
+    "path": "kurogames_rover_lick/images/9.png",
+    "hash": "d1bed26642083c7644e2b61b8809c80e"
   },
   {
     "path": "kurogames_songlun_dinner/images/0.png",
@@ -11106,6 +11250,10 @@
   {
     "path": "mihoyo_liuwei_holdsign/images/0.jpg",
     "hash": "5de58c33954c56d27437ba3274f0a7d3"
+  },
+  {
+    "path": "mihoyo_liuwei_say/images/0.jpg",
+    "hash": "0161f83a27eafcad4eabee578bc62f89"
   },
   {
     "path": "mihoyo_lynette_holdsign/images/0.png",
@@ -17264,6 +17412,10 @@
     "hash": "4fc847c6a1a587fce7ccbdf94459bf72"
   },
   {
+    "path": "shipborne_laser_weapons/images/0.png",
+    "hash": "f85c0d3ef28b5a700537301d68178fb9"
+  },
+  {
     "path": "shiroko_pero/images/0.png",
     "hash": "2df3b4d22bc022933ab13fe26f87c53c"
   },
@@ -20050,6 +20202,14 @@
   {
     "path": "violet_evergarden/images/0.png",
     "hash": "2b8666d381b3a00cbd78d9be375a2efc"
+  },
+  {
+    "path": "violet_evergarden/images/图层 1.png",
+    "hash": "3977b6ed73bef80348e72844885ae12b"
+  },
+  {
+    "path": "violet_evergarden/images/图层 2.png",
+    "hash": "0f24ef66629fb19784913e2812fd4b7d"
   },
   {
     "path": "vme50/images/0.png",
