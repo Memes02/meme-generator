@@ -6476,10 +6476,6 @@
     "hash": "aa3dde683bea08ee6fe5fee1d34ae8b1"
   },
   {
-    "path": "github/images/0.png",
-    "hash": "ff35449f5b09a9930ba9b4d3ba6e3b33"
-  },
-  {
     "path": "gong_xi_fa_cai/images/0.png",
     "hash": "967d045cfdb5baa76578263eb00e699e"
   },
@@ -6748,6 +6744,22 @@
     "hash": "ad26ead939850916940137b032db8883"
   },
   {
+    "path": "happy_national_day/images/1.png",
+    "hash": "507dad6acf28b33356651d15e95e74ac"
+  },
+  {
+    "path": "happy_national_day/images/2.png",
+    "hash": "abd9761cfaddd91f34f8d57de93739e9"
+  },
+  {
+    "path": "happy_national_day/images/3.png",
+    "hash": "846278921fd7c4d480a21bcc1fc42469"
+  },
+  {
+    "path": "happy_national_day/images/4.png",
+    "hash": "570607e141adf68433847ff7df3c20ff"
+  },
+  {
     "path": "happy_new_year/images/1.png",
     "hash": "bdfd19c84fdf8e971c4bfb3199a2486a"
   },
@@ -6930,6 +6942,22 @@
   {
     "path": "hold_tight/images/0.png",
     "hash": "6c52f7de5f1a4aca8f1a0e7c5f6dd89b"
+  },
+  {
+    "path": "horse_riding/images/1.png",
+    "hash": "438914ce7a432f04be363a3c6a03d70a"
+  },
+  {
+    "path": "horse_riding/images/2.png",
+    "hash": "b73f6c10482aced1866501185d3c25c1"
+  },
+  {
+    "path": "horse_riding/images/3.png",
+    "hash": "35824e91e36385f7fdea50857338eb53"
+  },
+  {
+    "path": "horse_riding/images/4.png",
+    "hash": "9f6003cb408cf50cd82681dd72d19f9a"
   },
   {
     "path": "houminghao/images/0.png",
@@ -10616,8 +10644,12 @@
     "hash": "16a32e5a514c4355a164afb05d510fb6"
   },
   {
+    "path": "mi_leijun_holdsign/images/0.jpg",
+    "hash": "04ee81fd14c77d82c58b9ab1b04da107"
+  },
+  {
     "path": "mi_monkey/images/0.png",
-    "hash": "857e78adf4710dd43d5752774c052fe7"
+    "hash": "bd63e4df1c72e3cafc9d0eeb6c7ae3fd"
   },
   {
     "path": "mihoyo/images/logo.png",
@@ -19674,6 +19706,10 @@
   {
     "path": "throw_gif/images/7.png",
     "hash": "08d7b581c394979ab9d63e004b23d67a"
+  },
+  {
+    "path": "throwing_poop/images/0.png",
+    "hash": "c58a0df00c9850f993303c9c09028d73"
   },
   {
     "path": "thump/images/0.png",
