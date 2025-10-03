@@ -13248,6 +13248,10 @@
     "hash": "2f218b1028744b120d6ee6b19664194b"
   },
   {
+    "path": "new_goodnews/images/0.png",
+    "hash": "77e38e20d4c1ffdf342c3fff4a5d2ef8"
+  },
+  {
     "path": "nijika_holdsign/images/0.jpg",
     "hash": "267732c79de6f2b26a7e98146237d67e"
   },
@@ -22402,10 +22406,6 @@
   {
     "path": "xile/images/xiyiji.png",
     "hash": "c08cf09d6bc60e1ea62581f779009927"
-  },
-  {
-    "path": "xinxi_news/images/0.png",
-    "hash": "c78643596cbaf831e675134a28c3c132"
   },
   {
     "path": "yes/images/0.png",
