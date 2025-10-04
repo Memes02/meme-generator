@@ -196,10 +196,6 @@
     "hash": "9a46dd33cc7a511a8368e768c6d4abb0"
   },
   {
-    "path": "anyliew_people_I_like/images/0.png",
-    "hash": "9ec19ec949044cdd8b0b37d97871dbed"
-  },
-  {
     "path": "anyliew_struggling/images/0.png",
     "hash": "39b7dfd22f7f7e631f250c0d3272f562"
   },
@@ -526,6 +522,10 @@
   {
     "path": "behead/images/9.png",
     "hash": "da10840d2a7a249872a8fe9538f366ca"
+  },
+  {
+    "path": "beloveds/images/0.png",
+    "hash": "9ec19ec949044cdd8b0b37d97871dbed"
   },
   {
     "path": "big_do/images/1.png",
