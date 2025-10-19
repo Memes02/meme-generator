@@ -18900,6 +18900,142 @@
     "hash": "317ef2588431426486bd9c7cb9b34588"
   },
   {
+    "path": "shamate/images/1.png",
+    "hash": "e6f5232869e269f4b06638e4f12e858d"
+  },
+  {
+    "path": "shamate/images/10.png",
+    "hash": "956943bae409e0947dde0caf6f4844d7"
+  },
+  {
+    "path": "shamate/images/11.png",
+    "hash": "2fc25a9d70cae4b5bcd276c4099aecfd"
+  },
+  {
+    "path": "shamate/images/12.png",
+    "hash": "07fd6c5dc3f97ec42bb9d22be423d329"
+  },
+  {
+    "path": "shamate/images/13.png",
+    "hash": "4aba369fcdbeb1b7c13ad2f1c0e8237b"
+  },
+  {
+    "path": "shamate/images/14.png",
+    "hash": "df4683d3e0e2ddcbe061d463be2b45f5"
+  },
+  {
+    "path": "shamate/images/15.png",
+    "hash": "8717093e842587b1c34b259ae06b4a5b"
+  },
+  {
+    "path": "shamate/images/16.png",
+    "hash": "d734e72673afba8897e383103c1a9110"
+  },
+  {
+    "path": "shamate/images/17.png",
+    "hash": "97d8a4d555940a3406c3315b3d4b2894"
+  },
+  {
+    "path": "shamate/images/18.png",
+    "hash": "8120748d4745579765567104a19453a4"
+  },
+  {
+    "path": "shamate/images/19.png",
+    "hash": "4abb7c4eed5290f277714913a0ab4d3f"
+  },
+  {
+    "path": "shamate/images/2.png",
+    "hash": "ecb82a1a09f62e7d3286421cf8e2e52b"
+  },
+  {
+    "path": "shamate/images/20.png",
+    "hash": "ad3d627af1acef3e230697c747b9f32e"
+  },
+  {
+    "path": "shamate/images/21.png",
+    "hash": "c37c7c2fb6a754e3feaf82adc3008dde"
+  },
+  {
+    "path": "shamate/images/22.png",
+    "hash": "6ae8e5b877c61a1979c054f637a0ffac"
+  },
+  {
+    "path": "shamate/images/23.png",
+    "hash": "1fe704bf74e2325543b816bc7b26ca3c"
+  },
+  {
+    "path": "shamate/images/24.png",
+    "hash": "9b185594e864572a57ccb52e628cc184"
+  },
+  {
+    "path": "shamate/images/25.png",
+    "hash": "2f6a5fca0117ef91741a7fa1e8765fd9"
+  },
+  {
+    "path": "shamate/images/26.png",
+    "hash": "b0485ac1e0fa85c0bb98e085f7105e3e"
+  },
+  {
+    "path": "shamate/images/27.png",
+    "hash": "ab7c5c16bdffbcc1fc2937ff9379cdcc"
+  },
+  {
+    "path": "shamate/images/28.png",
+    "hash": "549f7314ae872c1d027369de1888e4a0"
+  },
+  {
+    "path": "shamate/images/29.png",
+    "hash": "7c1a8da7ce7cf83961c4d9d746954e45"
+  },
+  {
+    "path": "shamate/images/3.png",
+    "hash": "f4f846fac64b7126acc321eb4a3790d8"
+  },
+  {
+    "path": "shamate/images/30.png",
+    "hash": "9ca09497068c4427fd1276ba5ee5ca78"
+  },
+  {
+    "path": "shamate/images/31.png",
+    "hash": "0685dff70976ae0d286f6b3d306f2671"
+  },
+  {
+    "path": "shamate/images/32.png",
+    "hash": "a9b5387d501106835b7dddd8f6ad1078"
+  },
+  {
+    "path": "shamate/images/33.png",
+    "hash": "d7d01814b21ae2e4035d5fca318cd5b8"
+  },
+  {
+    "path": "shamate/images/34.png",
+    "hash": "dec7c71fe20ed39cf253da6d717de18f"
+  },
+  {
+    "path": "shamate/images/4.png",
+    "hash": "c02905d69b40a5be96ba84d0adc00be7"
+  },
+  {
+    "path": "shamate/images/5.png",
+    "hash": "db09a4049d93bea6b459d270bef7ca33"
+  },
+  {
+    "path": "shamate/images/6.png",
+    "hash": "3749ebbff885533bb215bee72b114f5f"
+  },
+  {
+    "path": "shamate/images/7.png",
+    "hash": "05efa4f11ce87f3a4082a06206a1449a"
+  },
+  {
+    "path": "shamate/images/8.png",
+    "hash": "27423fff94efd5bbd31a9c33dda4fb10"
+  },
+  {
+    "path": "shamate/images/9.png",
+    "hash": "4144960b6e4f9c1cf374ff6dad837540"
+  },
+  {
     "path": "shikanoko_noko/images/0.png",
     "hash": "4fc847c6a1a587fce7ccbdf94459bf72"
   },
@@ -21694,18 +21830,6 @@
   {
     "path": "twist/images/4.png",
     "hash": "946914bdada2b87e06172331e288db83"
-  },
-  {
-    "path": "violet_evergarden/images/0.png",
-    "hash": "2b8666d381b3a00cbd78d9be375a2efc"
-  },
-  {
-    "path": "violet_evergarden/images/图层 1.png",
-    "hash": "3977b6ed73bef80348e72844885ae12b"
-  },
-  {
-    "path": "violet_evergarden/images/图层 2.png",
-    "hash": "0f24ef66629fb19784913e2812fd4b7d"
   },
   {
     "path": "vme50/images/0.png",
