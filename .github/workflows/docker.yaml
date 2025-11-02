@@ -8,6 +8,8 @@ on:
       - "v*"
   workflow_dispatch:
 
+
+
 permissions:
   contents: read
   packages: write
@@ -18,11 +20,7 @@ jobs:
 
     steps:
       - name: 检出代码
-        uses: actions/checkout@v3
-        with:
-          repository: Memes02/meme-generator
-          ref: main
-          fetch-depth: 0 
+        uses: actions/checkout@v4
 
 
       - name: 登录 Docker 镜像仓库
@@ -37,18 +35,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: 获取最新提交哈希
-        id: last_commit
-        run: |
-          echo "hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-
-      - name: 检查缓存是否存在
-        id: cache
-        uses: actions/cache@v3
-        with:
-          path: .git
-          key: ${{ runner.os }}-git-${{ steps.last_commit.outputs.hash }}
 
       - name: 生成镜像元数据
         id: meta
@@ -69,8 +55,6 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: 构建并推送 Docker 镜像
-        if: |
-          (github.event_name == 'schedule' && steps.cache.outputs.cache-hit != 'true') || (github.event_name == 'workflow_dispatch' && steps.cache.outputs.cache-hit != 'true') || github.event_name == 'push'
         uses: docker/build-push-action@v5
         with:
           platforms: linux/amd64,linux/arm64

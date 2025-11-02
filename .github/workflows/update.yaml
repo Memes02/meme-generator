@@ -16,27 +16,6 @@ permissions:
   contents: write
 
 jobs:
-  update_resource_list:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 检出仓库代码
-        uses: actions/checkout@v4
-
-      - name: 设置 Python 环境
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
-
-      - name: 更新 resource_list.json 文件
-        run: python tools/update_resource_list.py
-
-      - name: 提交并推送更改
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          message: "更新 resource_list.json"
-          branch: "main"
-
   update_wiki:
     runs-on: ubuntu-latest
     steps:

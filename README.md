@@ -39,6 +39,16 @@ _✨ 表情包生成器，用于制作各种沙雕表情包 ✨_
 
 详见 Wiki：[--> Wiki <--](https://github.com/Memes02/meme-generator/wiki)
 
+## 快速部署
+环境: [uv](https://docs.astral.sh/uv/getting-started/installation/), [Python 3.12+](https://www.python.org/), [git](https://git-scm.com/)
+```
+git clone https://github.com/Memes02/meme-generator
+cd meme-generator
+uv sync 
+uv run meme start
+```
+
+
 ## 开发
 
 如果希望编写、贡献新的表情，可以参考 [--> 新表情编写指北 <--](https://github.com/Memes02/meme-generator/wiki/%E6%96%B0%E8%A1%A8%E6%83%85%E7%BC%96%E5%86%99%E6%8C%87%E5%8C%97)
