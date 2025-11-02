@@ -48,6 +48,14 @@ uv sync
 uv run meme start
 ```
 
+## 保护进程
+环境: [pm2](https://github.com/Unitech/pm2/), [Node.js](https://nodejs.org/zh-cn/download/)
+```
+pm2 start pm2.json
+pm2 startup
+pm2 save
+```
+
 
 ## 开发
 
