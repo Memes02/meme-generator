@@ -1,4 +1,3 @@
-version: '3'
 services:
   meme:
     image: lovely02/meme-generator:main

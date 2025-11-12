@@ -48,6 +48,13 @@ uv sync
 uv run meme start
 ```
 
+环境: [docker](https://www.docker.com/)
+```
+git clone https://github.com/Memes02/meme-generator
+cd meme-generator
+docker compose up --pull always -d
+```
+
 ## 保护进程
 环境: [pm2](https://github.com/Unitech/pm2/), [Node.js](https://nodejs.org/zh-cn/download/)
 ```
