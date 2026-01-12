@@ -5,23 +5,23 @@ from pil_utils import BuildImage
 
 from meme_generator import add_meme
 from meme_generator.exception import TextOverLength
-
+from meme_generator.tags import MemeTags
 
 img_dir = Path(__file__).parent / "images"
 
 
-def naruto_yakushi_kabuto_say(images, texts: list[str], args):
+def mihoyo_paimon_say(images, texts: list[str], args):
     text = texts[0]
     frame = BuildImage.open(img_dir / "0.png")
     try:
         frame.draw_text(
-            (1040, 1, 1370, 483),
+            (145, 148, 619, 1117),
             text,
-            fill=(0, 0, 0),
+            fill=(94, 94, 94),
             allow_wrap=True,
-            max_fontsize=300,
-            min_fontsize=30,
-            lines_align="left",
+            max_fontsize=120,
+            min_fontsize=20,
+            lines_align="center",
         )
     except ValueError:
         raise TextOverLength(text)
@@ -29,12 +29,13 @@ def naruto_yakushi_kabuto_say(images, texts: list[str], args):
 
 
 add_meme(
-    "naruto_yakushi_kabuto_say",
-    naruto_yakushi_kabuto_say,
+    "mihoyo_paimon_say",
+    mihoyo_paimon_say,
     min_texts=1,
     max_texts=1,
-    default_texts=["仙法白激之术"],
-    keywords=["药师兜说","兜说"],
-    date_created=datetime(2026, 1, 9),
-    date_modified=datetime(2026, 1, 13),
+    default_texts=["前面的区域\n以后再来探索吧？"],
+    keywords=["派蒙说"],
+    tags=MemeTags.mihoyo,
+    date_created=datetime(2026, 1, 12),
+    date_modified=datetime(2026, 1, 12),
 )
