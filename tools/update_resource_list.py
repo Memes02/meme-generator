@@ -11,6 +11,7 @@ meme_paths = [
     project_path / "meme_generator" / "memes_emoji", 
     project_path / "meme_generator" / "memes_other", 
     project_path / "meme_generator" / "memes_emoji_nsfw", 
+    project_path / "meme_generator" / "tudou-meme", 
 ]
 
 resource_list_path = project_path / "resources" / "resource_list.json"
