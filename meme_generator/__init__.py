@@ -16,13 +16,13 @@ from meme_generator.meme import ParserArg as ParserArg
 from meme_generator.meme import ParserOption as ParserOption
 from meme_generator.version import __version__ as __version__
 
-MEME_DIRS = ["memes", "memes_jj", "memes_emoji", "memes_other", "memes_emoji_nsfw", "tudou-meme"]
+MEME_DIRS = ["memes", "memes_jj", "memes_emoji", "memes_other", "memes_emoji_nsfw"]
 
 for dir_name in MEME_DIRS:
     meme_dir = Path(__file__).parent / dir_name
     if not meme_dir.exists():
         continue
-    module_prefix = f"meme_generator.{dir_name}" 
+    module_prefix = f"meme_generator.{dir_name}"
     for path in meme_dir.iterdir():
         if path.is_dir():
             load_meme(f"{module_prefix}.{path.name}")

@@ -45,13 +45,6 @@ jobs:
           repository: anyliew/meme_emoji_nsfw
           path: ${{ github.workspace }}/memes_emoji_nsfw
 
-      - name: 检出tudou-meme仓库代码
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          repository: LRZ9712/tudou-meme
-          path: ${{ github.workspace }}/tudou-meme
-
       - name: 清理数据并同步
         shell: bash {0}
         run: |
@@ -64,8 +57,7 @@ jobs:
           cp -r ${{ github.workspace }}/memes_jj/memes/* meme_generator/memes_jj/
           cp -r ${{ github.workspace }}/memes_emoji/emoji/* meme_generator/memes_emoji/
           cp -r ${{ github.workspace }}/memes_emoji_nsfw/emoji/* meme_generator/memes_emoji_nsfw/
-          cp -r ${{ github.workspace }}/tudou-meme/meme/* meme_generator/tudou-meme/
-          rm -rf ${{ github.workspace }}/meme ${{ github.workspace }}/memes_jj ${{ github.workspace }}/memes_emoji ${{ github.workspace }}/memes_emoji_nsfw ${{ github.workspace }}/tudou-meme
+          rm -rf ${{ github.workspace }}/meme ${{ github.workspace }}/memes_jj ${{ github.workspace }}/memes_emoji ${{ github.workspace }}/memes_emoji_nsfw
 
       - name: 提交并推送更改
         uses: actions-js/push@master
