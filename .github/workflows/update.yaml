@@ -1,4 +1,4 @@
-name: 更新 resource_list.json & Wiki
+name: 更新 Wiki 表情列表
 
 on:
   push:
@@ -10,7 +10,13 @@ on:
       - "meme_generator/memes_emoji/**"
       - "meme_generator/memes_other/**"
       - "meme_generator/memes_emoji_nsfw/**"
+      - "meme_generator/memes_cute/**"
+      - "meme_generator/memes_tudou/**"
+      - "meme_generator/memes_contrib/**"
+      - "meme_generator/memes_crazy_emoji/**"
   workflow_dispatch:
+
+concurrency: update-wiki
 
 permissions:
   contents: write
@@ -21,24 +27,20 @@ jobs:
     steps:
       - name: 检出仓库代码
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: 检出 Wiki 仓库
         uses: actions/checkout@v4
         with:
           repository: ${{ github.repository }}.wiki
+          ref: master
           path: wiki
-          fetch-depth: 0
 
-      - name: 设置 Python 环境
-        uses: actions/setup-python@v5
+      - name: 安装 uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
-          python-version: "3.10"
-
-      - name: 安装 Poetry
-        uses: Gr1N/setup-poetry@v9
-
-      - name: 安装依赖
-        run: poetry install
+          enable-cache: true
 
       - name: 安装字体
         run: |
@@ -48,13 +50,19 @@ jobs:
           sudo cp resources/fonts/* /usr/share/fonts/myfonts/
           fc-cache -fv
       - name: 更新 memes.md 文件
-        run: poetry run python wiki/update_meme_list.py
+        run: uv run --locked --no-dev python wiki/update_meme_list.py
 
       - name: 提交并推送 Wiki 更新
-        uses: actions-js/push@master
-        with:
-          directory: "wiki"
-          repository: ${{ github.repository }}.wiki
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          message: "更新 Meme 列表"
-          branch: "master"
+        working-directory: wiki
+        shell: bash
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'Wiki 没有变更'
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m '更新 Meme 列表'
+          git push origin HEAD:refs/heads/master

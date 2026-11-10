@@ -5,75 +5,140 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
+concurrency:
+  group: sync-${{ github.ref }}
+
 permissions:
+  actions: write
   contents: write
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: 检出仓库代码
+      - name: 检出当前分支
         uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
 
-      - name: 检出memes仓库代码
+      - name: 检出上游表情
         uses: actions/checkout@v4
         with:
           ref: main
           repository: MemeCrafters/meme-generator
-          path: ${{ github.workspace }}/meme
+          path: .upstream/meme
+          persist-credentials: false
 
-      - name: 检出memes_jj仓库代码
+      - name: 检出 JJ 表情
         uses: actions/checkout@v4
         with:
           ref: master
           repository: jinjiao007/meme-generator-jj
-          path: ${{ github.workspace }}/memes_jj
+          path: .upstream/memes_jj
+          persist-credentials: false
 
-      - name: 检出memes_emoji仓库代码
+      - name: 检出 Emoji 表情
         uses: actions/checkout@v4
         with:
           ref: main
           repository: anyliew/meme_emoji
-          path: ${{ github.workspace }}/memes_emoji
+          path: .upstream/memes_emoji
+          persist-credentials: false
 
-      - name: 检出memes_emoji_nsfw仓库代码
+      - name: 检出 NSFW 表情
         uses: actions/checkout@v4
         with:
           ref: main
           repository: anyliew/meme_emoji_nsfw
-          path: ${{ github.workspace }}/memes_emoji_nsfw
+          path: .upstream/memes_emoji_nsfw
+          persist-credentials: false
 
-      - name: 清理数据并同步
-        shell: bash {0}
+      - name: 检出 Cute 表情
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          repository: AIGC-Yunzai/meme-generator-cute
+          path: .upstream/memes_cute
+          persist-credentials: false
+
+      - name: 检出土豆表情
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          repository: LRZ9712/tudou-meme
+          path: .upstream/memes_tudou
+          persist-credentials: false
+
+      - name: 检出 Contrib 表情
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          repository: MemeCrafters/meme-generator-contrib
+          path: .upstream/memes_contrib
+          persist-credentials: false
+
+      - name: 检出 Crazy Emoji 表情
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          repository: anyliew/crazy_emoji
+          path: .upstream/memes_crazy_emoji
+          persist-credentials: false
+
+      - name: 同步表情并推送变更
+        id: sync_memes
+        shell: bash
         run: |
-          shopt -s extglob
-          rm -rf meme_generator/memes/*
-          rm -rf meme_generator/memes_jj/!(README.md)
-          rm -rf meme_generator/memes_emoji/!(README.md)
-          rm -rf meme_generator/memes_emoji_nsfw/!(README.md)
-          cp -r ${{ github.workspace }}/meme/meme_generator/memes/* meme_generator/memes/
-          cp -r ${{ github.workspace }}/memes_jj/memes/* meme_generator/memes_jj/
-          cp -r ${{ github.workspace }}/memes_emoji/emoji/* meme_generator/memes_emoji/
-          cp -r ${{ github.workspace }}/memes_emoji_nsfw/emoji/* meme_generator/memes_emoji_nsfw/
-          rm -rf ${{ github.workspace }}/meme ${{ github.workspace }}/memes_jj ${{ github.workspace }}/memes_emoji ${{ github.workspace }}/memes_emoji_nsfw
+          sync_options=(--archive --checksum --delete --exclude='/.*')
+          rsync "${sync_options[@]}" .upstream/meme/meme_generator/memes/ meme_generator/memes/
 
-      - name: 提交并推送更改
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          message: '同步表情更新'
-          branch: ${{ github.ref }}
+          sync_options+=(--exclude='/README.md')
+          rsync "${sync_options[@]}" .upstream/memes_jj/memes/ meme_generator/memes_jj/
+          rsync "${sync_options[@]}" .upstream/memes_emoji/emoji/ meme_generator/memes_emoji/
+          rsync "${sync_options[@]}" .upstream/memes_emoji_nsfw/emoji/ meme_generator/memes_emoji_nsfw/
 
-      - name: 触发docker构建
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: docker.yaml
-          token: ${{ secrets.GH_TOKEN }}
+          # 土豆仓库有两个表情多套了一层投稿目录。
+          tudou_dir=.upstream/memes_tudou/meme
+          while read -r wrapper nested key; do
+            if [[ -f "$tudou_dir/$wrapper/$nested/__init__.py" && ! -e "$tudou_dir/$key" ]]; then
+              mv "$tudou_dir/$wrapper/$nested" "$tudou_dir/$key"
+              rmdir "$tudou_dir/$wrapper" || true
+            fi
+          done <<'TUDOU'
+          汤圆骑猪_8pNJS 汤圆骑猪 tangyuanqizhu
+          玩屎 玩屎 wanshi
+          TUDOU
 
-      - name: 触发update构建
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: update.yaml
-          token: ${{ secrets.GH_TOKEN }}
+          while read -r pack source_dir; do
+            rsync "${sync_options[@]}" ".upstream/$pack/$source_dir/" "meme_generator/$pack/"
+            cp ".upstream/$pack/LICENSE" "meme_generator/$pack/LICENSE"
+          done <<'PACKS'
+          memes_cute memes
+          memes_tudou meme
+          memes_contrib memes
+          memes_crazy_emoji emoji
+          PACKS
+
+          git add -A -- meme_generator/memes{,_jj,_emoji,_emoji_nsfw,_cute,_tudou,_contrib,_crazy_emoji}
+          if git diff --cached --quiet; then
+            echo '表情没有变更'
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m '同步表情更新'
+          git push origin "HEAD:$GITHUB_REF"
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+
+      - name: 触发镜像构建
+        if: steps.sync_memes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run docker.yaml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"
+
+      - name: 触发 Wiki 更新
+        if: steps.sync_memes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update.yaml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"

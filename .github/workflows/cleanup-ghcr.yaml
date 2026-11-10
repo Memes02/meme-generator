@@ -1,0 +1,28 @@
+name: 清理 GHCR 旧镜像
+
+on:
+  workflow_dispatch:
+    inputs:
+      delete_versions:
+        description: 实际删除符合条件的旧镜像（默认仅预览）
+        type: boolean
+        default: false
+
+permissions:
+  packages: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ghcr-publish-and-cleanup
+      queue: max
+    steps:
+      - name: 清理超过 7 天的未标记镜像
+        uses: dataaxiom/ghcr-cleanup-action@d52806a0dc70b430571a37da1fde39733ffd640f # v1.2.2
+        with:
+          package: ${{ github.event.repository.name }}
+          dry-run: ${{ !inputs.delete_versions }}
+          delete-untagged: true
+          older-than: 7 days
+          validate: true
