@@ -1,0 +1,60 @@
+name: 更新 resource_list.json & Wiki
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "meme_generator/memes/**"
+      - "meme_generator/memes_jj/**"
+      - "meme_generator/memes_emoji/**"
+      - "meme_generator/memes_other/**"
+      - "meme_generator/memes_emoji_nsfw/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update_wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
+
+      - name: 检出 Wiki 仓库
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: wiki
+          fetch-depth: 0
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: 安装 Poetry
+        uses: Gr1N/setup-poetry@v9
+
+      - name: 安装依赖
+        run: poetry install
+
+      - name: 安装字体
+        run: |
+          sudo apt update -y
+          sudo apt install -y fonts-noto-color-emoji libegl1 libgl1 libglx-mesa0 libgl1-mesa-dri libegl1-mesa-dev
+          sudo mkdir -p /usr/share/fonts/myfonts
+          sudo cp resources/fonts/* /usr/share/fonts/myfonts/
+          fc-cache -fv
+      - name: 更新 memes.md 文件
+        run: poetry run python wiki/update_meme_list.py
+
+      - name: 提交并推送 Wiki 更新
+        uses: actions-js/push@master
+        with:
+          directory: "wiki"
+          repository: ${{ github.repository }}.wiki
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: "更新 Meme 列表"
+          branch: "master"

@@ -1,0 +1,33 @@
+# 基础配置
+line-length = 88  # 每行最大长度限制
+target-version = "py39"  # 目标Python版本
+
+# 检查规则配置
+[lint]
+# 启用的检查规则集
+select = [
+    "E",   # Pycodestyle错误
+    "W",   # Pycodestyle警告
+    "F",   # Pyflakes
+    "UP",  # pyupgrade
+    "C",   # McCabe复杂度
+    "T",   # flake8-debugger
+    "PYI", # 类型提示相关
+    "PT",  # Pytest风格
+    "Q",   # 引号风格
+    "I",   # isort
+]
+
+# 忽略的特定规则
+ignore = [
+    "E402",  # 模块级别导入不在文件顶部
+    "E501",  # 行过长
+    "E711",  # 与None比较应使用is/is not
+    "C901",  # 函数复杂度过高
+    "UP037", # 不必要的类型提示升级
+    "F401",  # 未使用的导入
+]
+
+# isort配置
+[lint.isort]
+detect-same-package = true  # 检测相同包的导入

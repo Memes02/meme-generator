@@ -1,0 +1,26 @@
+from datetime import datetime
+from pathlib import Path
+from pil_utils import BuildImage
+from meme_generator import MemeArgsModel, add_meme
+from meme_generator.utils import make_png_or_gif
+from meme_generator.tags import MemeTags
+img_dir = Path(__file__).parent / "images"
+def kurogames_cartethyia_feetup(images: list[BuildImage], texts: list[str], args: MemeArgsModel):
+    frame = BuildImage.open(img_dir / "0.png")
+    def make(imgs: list[BuildImage]) -> BuildImage:
+        img = imgs[0].convert("RGBA").resize((120, 120))
+        img = img.rotate(15, expand=True)
+        return frame.copy().paste(img, (395, 130), alpha=True, below=True ) 
+    return make_png_or_gif(images, make)
+add_meme(
+    "kurogames_cartethyia_feetup",
+    kurogames_cartethyia_feetup,
+    min_images=1,
+    max_images=1,
+    min_texts=0,
+    max_texts=0,
+    keywords=["卡提希娅抬脚","卡提抬脚"],
+    tags=MemeTags.wuthering_waves,
+    date_created=datetime(2025, 8, 12),
+    date_modified=datetime(2026, 10, 12),
+)

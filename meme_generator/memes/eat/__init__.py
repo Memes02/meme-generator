@@ -1,0 +1,30 @@
+from datetime import datetime
+from pathlib import Path
+
+from pil_utils import BuildImage
+
+from meme_generator import add_meme
+from meme_generator.utils import save_gif
+
+img_dir = Path(__file__).parent / "images"
+
+
+def eat(images: list[BuildImage], texts, args):
+    img = images[0].convert("RGBA").square().resize((34, 34))
+    frames = []
+    for i in range(3):
+        frame = BuildImage.open(img_dir / f"{i}.png")
+        frame.paste(img, (2, 38), below=True)
+        frames.append(frame.image)
+    return save_gif(frames, 0.05)
+
+
+add_meme(
+    "eat",
+    eat,
+    min_images=1,
+    max_images=1,
+    keywords=["吃"],
+    date_created=datetime(2022, 2, 15),
+    date_modified=datetime(2023, 2, 14),
+)

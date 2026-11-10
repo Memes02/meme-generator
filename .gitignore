@@ -1,0 +1,15 @@
+*__pycache__/
+dist/
+.vscode/
+.idea/
+venv/
+.venv/
+node_modules/
+pdm.lock
+.ruff_cache
+result.png
+result.jpg
+result.gif
+avatar.jpg
+output/
+poetry.lock

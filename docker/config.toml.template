@@ -1,0 +1,19 @@
+[meme]
+load_builtin_memes = $LOAD_BUILTIN_MEMES
+meme_dirs = $MEME_DIRS
+meme_disabled_list = $MEME_DISABLED_LIST
+
+[gif]
+gif_max_size = $GIF_MAX_SIZE
+gif_max_frames = $GIF_MAX_FRAMES
+
+[translate]
+baidu_trans_appid = "$BAIDU_TRANS_APPID"
+baidu_trans_apikey = "$BAIDU_TRANS_APIKEY"
+
+[server]
+host = "$HOST"
+port = "$PORT"
+
+[log]
+log_level = "$LOG_LEVEL"

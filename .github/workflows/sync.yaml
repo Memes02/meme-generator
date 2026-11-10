@@ -1,0 +1,79 @@
+name: 同步表情仓库
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: 检出memes仓库代码
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          repository: MemeCrafters/meme-generator
+          path: ${{ github.workspace }}/meme
+
+      - name: 检出memes_jj仓库代码
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          repository: jinjiao007/meme-generator-jj
+          path: ${{ github.workspace }}/memes_jj
+
+      - name: 检出memes_emoji仓库代码
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          repository: anyliew/meme_emoji
+          path: ${{ github.workspace }}/memes_emoji
+
+      - name: 检出memes_emoji_nsfw仓库代码
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          repository: anyliew/meme_emoji_nsfw
+          path: ${{ github.workspace }}/memes_emoji_nsfw
+
+      - name: 清理数据并同步
+        shell: bash {0}
+        run: |
+          shopt -s extglob
+          rm -rf meme_generator/memes/*
+          rm -rf meme_generator/memes_jj/!(README.md)
+          rm -rf meme_generator/memes_emoji/!(README.md)
+          rm -rf meme_generator/memes_emoji_nsfw/!(README.md)
+          cp -r ${{ github.workspace }}/meme/meme_generator/memes/* meme_generator/memes/
+          cp -r ${{ github.workspace }}/memes_jj/memes/* meme_generator/memes_jj/
+          cp -r ${{ github.workspace }}/memes_emoji/emoji/* meme_generator/memes_emoji/
+          cp -r ${{ github.workspace }}/memes_emoji_nsfw/emoji/* meme_generator/memes_emoji_nsfw/
+          rm -rf ${{ github.workspace }}/meme ${{ github.workspace }}/memes_jj ${{ github.workspace }}/memes_emoji ${{ github.workspace }}/memes_emoji_nsfw
+
+      - name: 提交并推送更改
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: '同步表情更新'
+          branch: ${{ github.ref }}
+
+      - name: 触发docker构建
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: docker.yaml
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: 触发update构建
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: update.yaml
+          token: ${{ secrets.GH_TOKEN }}
